@@ -78,7 +78,7 @@ export default function FirstUse() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("casino-remedial.vercel.app/api/games");
+      const res = await fetch("https://casino-remedial.onrender.com/api/games");
       if (!res.ok) throw new Error("Error cargando juegos");
       const data = await res.json();
       setGames(data);
@@ -97,7 +97,7 @@ export default function FirstUse() {
       return;
     }
     try {
-      const res = await fetch("casino-remedial.vercel.app/api/games", {
+      const res = await fetch("https://casino-remedial.onrender.com/api/games", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -118,7 +118,7 @@ export default function FirstUse() {
   async function deleteGame(id) {
     if (!window.confirm("¿Eliminar este juego?")) return;
     try {
-      const res = await fetch(`casino-remedial.vercel.app/api/games/${id}`, { method: "DELETE" });
+      const res = await fetch(`https://casino-remedial.onrender.com/api/games/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Error eliminando juego");
       fetchGames();
     } catch (e) {
@@ -152,7 +152,7 @@ export default function FirstUse() {
       return;
     }
     try {
-      const res = await fetch(`casino-remedial.vercel.app/api/games/${id}`, {
+      const res = await fetch(`https://casino-remedial.onrender.com/api/games/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
