@@ -1,27 +1,33 @@
-// App.jsx
 import React, { useState } from "react";
 import "./menu.css";
 
-function Home() {
-  return <div className="screen"><h2>🏠 Home Screen</h2><p>Bienvenido a la pantalla principal.</p></div>;
+// Pantalla Games (puedes reemplazar o agregar tu código)
+function Games() {
+  return (
+    <div className="screen">
+      <h2>🎮 Games Screen</h2>
+      <p>Esta es la pantalla de juegos. Aquí irá tu contenido de juegos.</p>
+    </div>
+  );
 }
 
-function Profile() {
-  return <div className="screen"><h2>👤 Profile Screen</h2><p>Esta es tu pantalla de perfil.</p></div>;
-}
-
-function Settings() {
-  return <div className="screen"><h2>⚙️ Settings Screen</h2><p>Ajustes y configuraciones.</p></div>;
+// Pantalla Clients (puedes reemplazar o agregar tu código)
+function Clients() {
+  return (
+    <div className="screen">
+      <h2>👥 Clients Screen</h2>
+      <p>Esta es la pantalla de clientes. Aquí irá tu contenido de clientes.</p>
+    </div>
+  );
 }
 
 const screens = {
-  home: <Home />,
-  profile: <Profile />,
-  settings: <Settings />,
+  games: <Games />,
+  clients: <Clients />,
 };
 
 export default function App() {
-  const [activeScreen, setActiveScreen] = useState("home");
+  const [activeScreen, setActiveScreen] = useState("games");
 
   return (
     <div className="app-container">
@@ -37,9 +43,7 @@ export default function App() {
         ))}
       </nav>
 
-      <main className="screen-container">
-        {screens[activeScreen]}
-      </main>
+      <main className="screen-container">{screens[activeScreen]}</main>
     </div>
   );
 }
