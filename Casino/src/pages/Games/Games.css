@@ -174,7 +174,7 @@ html, body, #root {
   width: 100%;
   max-width: 1100px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* ← Cambiado a 3 columnas fijas */
   gap: 28px;
   padding: 0 10px;
   overflow-y: auto;
@@ -280,6 +280,7 @@ html, body, #root {
   margin-top: 16px;
   justify-content: center;
 }
+
 /* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
   .app-container {
@@ -310,67 +311,72 @@ html, body, #root {
 
   .submit-button {
     font-size: 16px;
+   
     padding: 12px;
   }
-
+  
   .games-container {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    padding: 0;
+  grid-template-columns: repeat(2, 1fr); /* ← Cambiado a 2 columnas */
+  gap: 20px;
   }
-
+  
   .game-card {
-    padding: 18px 20px;
+  padding: 18px 20px;
   }
-
+  
   .game-name {
-    font-size: 22px;
+  font-size: 22px;
   }
-
+  
   .game-info {
-    font-size: 14px;
+  font-size: 14px;
   }
-
+  
   .edit-button,
   .delete-button {
-    font-size: 20px;
+  font-size: 20px;
   }
-
+  
   .edit-actions {
-    flex-direction: column;
-    gap: 8px;
+  flex-direction: column;
+  gap: 8px;
   }
-
+  
   .back-button {
-    font-size: 14px;
-    padding: 8px 12px;
+  font-size: 14px;
+  padding: 8px 12px;
   }
-
+  
   .back-button svg {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
   }
-}
-
-@media (max-width: 480px) {
+  }
+  
+  @media (max-width: 480px) {
   .header {
-    font-size: 2rem;
+  font-size: 2rem;
   }
-
+  
   .submit-button {
-    font-size: 14px;
-    padding: 10px;
+  font-size: 14px;
+  padding: 10px;
   }
-
+  
+  .games-container {
+  grid-template-columns: 1fr; /* ← Cambiado a 1 columna */
+  }
+  
   .game-card {
-    padding: 16px;
+  padding: 16px;
   }
-
+  
   .game-name {
-    font-size: 20px;
+  font-size: 20px;
   }
-
+  
   .game-info {
-    font-size: 13px;
+  font-size: 13px;
   }
-}
+  }
 
