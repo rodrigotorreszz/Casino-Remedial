@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700;900&display=swap');
 
 .firstuse-container {
   position: relative;
-  background: radial-gradient(circle at center, #2b0000, #000000 80%);
+  background: linear-gradient(135deg, #1b0a0a, #3d1e1e);
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: gold;
-  font-family: 'Lora', serif;
+  color: #f7d558;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   overflow: hidden;
   padding: 20px;
@@ -28,31 +28,39 @@
   z-index: 0;
 }
 
-/* Cartas con tamaño fijo */
+/* Cartas con un diseño más moderno y sombras suaves */
 .card-bg {
   position: absolute;
-  width: 70px;
-  height: 100px;
-  background: white;
-  border-radius: 10px;
-  border: 2px solid gold;
-  box-shadow: 0 0 8px gold;
-  filter: drop-shadow(0 0 1.5px gold);
-  animation: cardFloat 6s ease-in-out infinite;
+  width: 75px;
+  height: 110px;
+  background: #fff8dc;
+  border-radius: 12px;
+  border: 2px solid #f7d558;
+  box-shadow:
+    0 4px 12px rgba(247, 213, 88, 0.5),
+    inset 0 0 8px rgba(247, 213, 88, 0.3);
+  animation: cardFloat 5s ease-in-out infinite;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 8px;
+  padding: 12px 10px;
   font-family: 'Playfair Display', serif;
-  font-weight: bold;
+  font-weight: 700;
   user-select: none;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   cursor: default;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  opacity: 0.85;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
 }
 
+.card-bg:hover {
+  transform: translateY(-10px) rotate(3deg);
+  box-shadow:
+    0 8px 20px rgba(247, 213, 88, 0.9),
+    inset 0 0 12px rgba(247, 213, 88, 0.6);
+}
+
+/* Valor grande centrado */
 .card-bg .card-value {
   position: absolute;
   top: 50%;
@@ -60,100 +68,113 @@
   transform: translate(-50%, -50%);
   font-family: 'Playfair Display', serif;
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 3.2rem;
   color: inherit;
-  text-shadow: 0 0 8px rgba(255, 215, 0, 0.85);
+  text-shadow: 0 0 10px rgba(247, 213, 88, 0.85);
   pointer-events: none;
   user-select: none;
 }
 
+/* Símbolos en las esquinas */
 .card-bg::before,
 .card-bg::after {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
   user-select: none;
   line-height: 1;
   color: inherit;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 .card-bg::before {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 4px;
   align-self: flex-start;
   content: attr(data-suit);
 }
 
 .card-bg::after {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   align-self: flex-end;
   transform: rotate(180deg);
   margin-top: 4px;
   content: attr(data-suit);
 }
 
-/* Animación flotante suave */
+/* Animación más sutil y fluida */
 @keyframes cardFloat {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
-    opacity: 0.6;
+    opacity: 0.7;
   }
   50% {
-    transform: translateY(-12px) rotate(12deg);
+    transform: translateY(-8px) rotate(6deg);
     opacity: 1;
   }
 }
 
-/* Cartel central */
+/* Contenedor del contenido central */
 .firstuse-content {
   position: relative;
   z-index: 10;
-  max-width: 700px;
-  padding: 40px 60px;
-  background: rgba(26, 0, 0, 0.85);
-  border-radius: 20px;
+  max-width: 600px;
+  padding: 50px 40px;
+  background: rgba(40, 15, 15, 0.9);
+  border-radius: 25px;
   box-shadow:
-    0 0 15px #ffcc00,
-    0 0 25px #ffcc00;
-  color: gold;
+    0 0 20px #f7d558,
+    0 0 40px #f7d558;
+  color: #f7d558;
   text-align: center;
-  font-family: 'Lora', serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Título con brillo */
+/* Título con fuente elegante y sombra */
 .casino-title {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  text-shadow: 0 0 15px gold, 0 0 25px #ffcc00;
-  margin-bottom: 20px;
-  color: gold;
+  font-size: 3.5rem;
+  text-shadow: 0 0 25px #f7d558, 0 0 40px #f7d558;
+  margin-bottom: 25px;
+  color: #f7d558;
 }
 
-/* Descripción */
+/* Descripción clara */
 .casino-description {
-  font-size: 1.2rem;
-  color: #ffd700;
-  margin-bottom: 30px;
-  text-shadow: 0 0 5px #aa8500;
-  line-height: 1.4;
+  font-size: 1.3rem;
+  color: #f7d558cc;
+  margin-bottom: 40px;
+  text-shadow: 0 0 8px #b79e2a;
+  line-height: 1.5;
 }
 
-/* Botón de entrada */
+/* Botón con animación más atractiva */
 .enter-button {
-  background: gold;
-  color: black;
-  font-size: 1.3rem;
-  padding: 15px 40px;
+  background: linear-gradient(135deg, #f7d558, #d1b500);
+  color: #2c1a00;
+  font-size: 1.5rem;
+  padding: 18px 50px;
   border: none;
   cursor: pointer;
-  border-radius: 12px;
-  box-shadow: 0 0 15px #daa520;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 15px;
+  box-shadow:
+    0 0 25px #f7d558,
+    0 0 50px #f7d558;
+  transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
   user-select: none;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .enter-button:hover {
-  background-color: #ffdf00;
-  transform: scale(1.1);
-  box-shadow: 0 0 30px #ffd700;
+  background: linear-gradient(135deg, #ffea70, #f7d558);
+  transform: scale(1.15) rotate(-2deg);
+  box-shadow:
+    0 0 35px #fff066,
+    0 0 65px #fff066;
 }
+
+.enter-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 20px #c4a800;
+}
+
