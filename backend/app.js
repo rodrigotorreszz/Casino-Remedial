@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://casino-remedial.onrender.com",
     // Permitir envío de cookies y credenciales
     credentials: true
   })
