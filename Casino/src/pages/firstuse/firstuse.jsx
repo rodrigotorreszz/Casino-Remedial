@@ -73,7 +73,7 @@ const FirstUse = () => {
   }, []);
 
   const handleEnter = () => {
-    navigate("/Games"); // <-- ruta a la página de juegos
+    navigate("/Menu"); // <-- ruta a la página de juegos
   };
 
   return (

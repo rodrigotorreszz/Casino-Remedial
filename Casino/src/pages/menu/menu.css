@@ -1,0 +1,79 @@
+/* Menu.css */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body, html, #root {
+    margin: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .app-container {
+    background: #253341;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    width: 90%;
+    max-width: 600px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .menu {
+    display: flex;
+    background: #1e293b;
+    padding: 10px;
+    justify-content: space-around;
+    border-radius: 16px 16px 0 0;
+  }
+  
+  .menu-button {
+    background: transparent;
+    border: 2px solid #f9d342;
+    color: #f9d342;
+    padding: 10px 20px;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+  }
+  
+  .menu-button:hover {
+    background-color: #f9d342;
+    color: #1e293b;
+  }
+  
+  .menu-button.active {
+    background-color: #f9d342;
+    color: #1e293b;
+    box-shadow: 0 0 15px #f9d342;
+  }
+  
+  .screen-container {
+    flex-grow: 1;
+    padding: 30px 20px;
+    overflow-y: auto;
+  }
+  
+  .screen h2 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: #f9d342;
+    text-shadow: 0 0 8px #f9d342;
+  }
+  
+  .screen p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+  }
+  
