@@ -280,3 +280,97 @@ html, body, #root {
   margin-top: 16px;
   justify-content: center;
 }
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 20px 10px;
+    gap: 30px;
+  }
+
+  .header {
+    font-size: 2.4rem;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .game-form {
+    padding: 20px 24px;
+    gap: 18px;
+  }
+
+  .input-field {
+    padding: 12px 14px 12px 40px;
+    font-size: 14px;
+  }
+
+  .submit-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .games-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    padding: 0;
+  }
+
+  .game-card {
+    padding: 18px 20px;
+  }
+
+  .game-name {
+    font-size: 22px;
+  }
+
+  .game-info {
+    font-size: 14px;
+  }
+
+  .edit-button,
+  .delete-button {
+    font-size: 20px;
+  }
+
+  .edit-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .back-button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .back-button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 2rem;
+  }
+
+  .submit-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .game-card {
+    padding: 16px;
+  }
+
+  .game-name {
+    font-size: 20px;
+  }
+
+  .game-info {
+    font-size: 13px;
+  }
+}
+
