@@ -1,65 +1,17 @@
-// FirstUse.jsx
-
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "./Games.css";
 
-// Íconos SVG como componentes (puedes pasarlos a otro archivo si quieres)
-const IconBack = () => (
-  <svg viewBox="0 0 24 24" >
-    <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const IconAdd = () => (
-  <svg viewBox="0 0 24 24" >
-    <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const IconEdit = () => (
-  <svg viewBox="0 0 24 24" >
-    <path d="M12 20h9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-  </svg>
-);
-
-const IconDelete = () => (
-  <svg viewBox="0 0 24 24" >
-    <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-  </svg>
-);
-
-const IconGame = () => (
-  <svg viewBox="0 0 64 64" fill="none" stroke="#f9d342" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" >
-    <circle cx="32" cy="32" r="30" />
-    <path d="M16 32h32M32 16v32" />
-  </svg>
-);
-
-const IconName = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="#f9d342" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" >
-    <path d="M4 12h16" />
-    <path d="M4 6h16" />
-    <path d="M4 18h16" />
-  </svg>
-);
-
-const IconCategory = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="#f9d342" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" >
-    <circle cx="12" cy="12" r="3" />
-    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
-  </svg>
-);
-
-const IconBet = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="#f9d342" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" >
-    <path d="M12 8v8M8 12h8" />
-    <circle cx="12" cy="12" r="10" />
-  </svg>
-);
+// Íconos SVG (igual que tú tienes)
+const IconBack = () => (/* ... */);
+const IconAdd = () => (/* ... */);
+const IconEdit = () => (/* ... */);
+const IconDelete = () => (/* ... */);
+const IconGame = () => (/* ... */);
+const IconName = () => (/* ... */);
+const IconCategory = () => (/* ... */);
+const IconBet = () => (/* ... */);
 
 export default function FirstUse() {
   const [games, setGames] = useState([]);
@@ -126,13 +78,13 @@ export default function FirstUse() {
     }
   }
 
-  async function startEdit(game) {
+  function startEdit(game) {
     setEditId(game._id);
     setEditForm({
       name: game.name,
       category: game.category,
-      minBet: game.minBet,
-      maxBet: game.maxBet,
+      minBet: game.minBet.toString(),
+      maxBet: game.maxBet.toString(),
     });
   }
 
@@ -196,6 +148,7 @@ export default function FirstUse() {
         Casino Royale
       </h1>
 
+      {/* Formulario para crear nuevo juego */}
       <form className="game-form" onSubmit={createGame}>
         <div className="input-wrapper">
           <IconName />
@@ -266,6 +219,7 @@ export default function FirstUse() {
       <div className="games-container">
         {games.map((game) =>
           editId === game._id ? (
+            // Formulario para editar juego
             <motion.div
               key={game._id}
               className="game-card"
@@ -337,6 +291,7 @@ export default function FirstUse() {
               </div>
             </motion.div>
           ) : (
+            // Vista normal del juego
             <motion.div
               key={game._id}
               className="game-card"
@@ -370,5 +325,3 @@ export default function FirstUse() {
     </motion.div>
   );
 }
-
-
