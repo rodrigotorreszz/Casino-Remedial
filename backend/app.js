@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://casinito.vercel.app/",
+    origin: "https://casinito.vercel.app",
     // Permitir envío de cookies y credenciales
     credentials: true
   })
