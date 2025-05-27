@@ -1,0 +1,282 @@
+/* Games.css */
+
+/* Reset básico */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  font-family: 'Poppins', sans-serif;
+  color: #e0e0e0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor principal */
+.app-container {
+  height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Botón Back */
+.back-button {
+  align-self: flex-start;
+  background: transparent;
+  border: 2px solid #f9d342;
+  color: #f9d342;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  box-shadow: 0 0 6px #f9d342;
+}
+
+.back-button:hover {
+  background-color: #f9d342;
+  color: #1e293b;
+}
+
+/* Icono Back (flecha izquierda) */
+.back-button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Header principal */
+.header {
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: #f9d342;
+  text-shadow: 0 0 10px #f9d342;
+  user-select: none;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 3px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Icono header */
+.header svg {
+  width: 48px;
+  height: 48px;
+  fill: #f9d342;
+  filter: drop-shadow(0 0 3px #f9d342);
+}
+
+/* Formulario */
+.game-form {
+  background: #253341;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  color: #cbd5e1;
+}
+
+/* Input con icono wrapper */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Inputs */
+.input-field {
+  padding: 14px 16px 14px 44px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  width: 100%;
+  box-shadow: inset 0 0 8px #94a3b8;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.input-field::placeholder {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.input-field:focus {
+  box-shadow: 0 0 12px #f9d342;
+  background-color: #faf3d1;
+}
+
+/* Icono dentro input */
+.input-wrapper svg {
+  position: absolute;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  fill: #f9d342;
+  pointer-events: none;
+}
+
+/* Botón Submit */
+.submit-button {
+  background: linear-gradient(90deg, #f9d342, #ffd95a);
+  border: none;
+  padding: 16px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  color: #1e293b;
+  user-select: none;
+  box-shadow: 0 0 25px #f9d342;
+  transition: all 0.3s ease;
+  letter-spacing: 1.4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.submit-button:hover {
+  background: linear-gradient(90deg, #fff46e, #ffe47a);
+  box-shadow: 0 0 40px #fff46e, inset 0 0 40px #fff46e;
+}
+
+/* Icono en submit */
+.submit-button svg {
+  width: 20px;
+  height: 20px;
+  fill: #1e293b;
+}
+
+/* Contenedor juegos */
+.games-container {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  padding: 0 10px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* Tarjeta de juego */
+.game-card {
+  background: #1e293b;
+  border-radius: 18px;
+  padding: 22px 30px;
+  box-shadow: 0 0 15px rgba(249, 211, 66, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e0e0e0;
+  user-select: none;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px #f9d342, inset 0 0 20px #f9d342;
+}
+
+/* Nombre del juego */
+.game-name {
+  font-size: 26px;
+  margin-bottom: 14px;
+  font-weight: 800;
+  color: #f9d342;
+  text-shadow: 0 0 10px #f9d342;
+  text-align: center;
+}
+
+/* Información del juego */
+.game-info {
+  font-size: 16px;
+  margin: 6px 0;
+  color: #cbd5e1;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Botón eliminar */
+.delete-button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ef4444;
+  font-size: 22px;
+  user-select: none;
+  padding: 4px;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.delete-button:hover {
+  color: #f87171;
+  transform: scale(1.3);
+}
+
+/* Botón editar */
+.edit-button {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #3b82f6;
+  font-size: 22px;
+  user-select: none;
+  padding: 4px;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.edit-button:hover {
+  color: #60a5fa;
+  transform: scale(1.3);
+}
+
+/* Textos de estado */
+.loading-text, .error-text, .no-games-text {
+  color: #f9d342;
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-align: center;
+  user-select: none;
+}
+
+.error-text {
+  color: #ef4444;
+}
+
+/* Botones cancelar/guardar edición */
+.edit-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  justify-content: center;
+}
